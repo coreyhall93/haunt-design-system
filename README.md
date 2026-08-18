@@ -62,6 +62,14 @@ running text's polar opposite — navigation chrome, in-content headings, and
 body copy — all sharing one family so they read as one voice at different
 weights rather than competing typefaces.
 
+**Decided, 2026-08-17: Perfectly Nineties + Overused Grotesk, at the sizes,
+weights, and tracking in the two tables below.** This is final, not a trial —
+the values in this document are the shipped choice. What's *not* yet done is
+the production implementation: self-hosting both as WOFF2 with `@font-face`
+and wiring them into the theme's real `--haunt-*` CSS custom properties (they
+currently only exist as the working defaults in the font-pairing dev tool).
+That's an implementation step, not an open design question.
+
 **No italics, anywhere, full stop.** `font-style: normal !important` is
 forced site-wide, and `font-synthesis-style: none` stops browsers from faking
 an oblique when a face has no real italic. Emphasis is carried by weight, not
@@ -270,14 +278,14 @@ text but above scrolling content.
 
 ## 10. Open questions, as of 2026-08-17
 
-- **Final font pairing** is still being tried, not shipped. The current
-  working combination — and the values used throughout this document — is:
-  Perfectly Nineties for both title roles, Overused Grotesk for nav/heading/
-  body at weights 700/600/400 respectively, site title 18px, post title
-  27px, body 16px, 760px measure. Being judged on **near-white (`#fdfdfc`)**
-  as a trial background for evaluating the pairing itself — this is not a
-  change to the theme's decided ground color, which remains the warm grey
-  `#f5f3ee` above.
+- **Font pairing is decided** (see section 3) — Perfectly Nineties for both
+  title roles, Overused Grotesk for nav/heading/body at weights 700/600/400,
+  site title 18px, post title 27px, body 16px. Not yet self-hosted as WOFF2
+  in the production theme CSS — that's remaining implementation work, not an
+  open design decision. The near-white (`#fdfdfc`) background used while
+  judging the pairing was a trial-viewing background only, not a change to
+  the theme's decided ground color, which remains the warm grey `#f5f3ee`
+  above.
 - **760px measure** at current body size still needs judgment from reading
   an actual long post, not a specimen page.
 - **Fixed masthead + fade scrim** (section 9) — proposed only, needs a
